@@ -15,39 +15,41 @@ class CurrencyConversionRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double convertedValue = yenValue * (exchangeRates[selectedCurrency] ?? 1.0);
+    final convertedValue = yenValue * (exchangeRates[selectedCurrency] ?? 1.0);
 
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
-            children: [
-              GestureDetector(
-                onTap: () {
-                  _showImageDialog(context, imagePath);
-                },
-                child: Image.asset(
-                  imagePath,
-                  width: 60,
-                  height: 40,
-                  fit: BoxFit.contain,
-                ),
-              ),
-              const SizedBox(width: 8),
-              Text(
-                '$yenValue yen',
-                style: const TextStyle(fontSize: 16),
-              ),
-            ],
-          ),
+          _buildCurrencyImage(context),
           Text(
             '= ${convertedValue.toStringAsFixed(2)} $selectedCurrency',
             style: const TextStyle(fontSize: 16),
           ),
         ],
       ),
+    );
+  }
+
+  Widget _buildCurrencyImage(BuildContext context) {
+    return Row(
+      children: [
+        GestureDetector(
+          onTap: () => _showImageDialog(context, imagePath),
+          child: Image.asset(
+            imagePath,
+            width: 60,
+            height: 40,
+            fit: BoxFit.contain,
+          ),
+        ),
+        const SizedBox(width: 8),
+        Text(
+          '$yenValue yen',
+          style: const TextStyle(fontSize: 16),
+        ),
+      ],
     );
   }
 
