@@ -25,7 +25,10 @@ class CurrencyConverterScreenState extends State<CurrencyConverterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('washihaji'),
+        title: Image.asset(
+          'assets/header_logo.png',
+          height: 40,
+        ),
         centerTitle: true,
         backgroundColor: const Color(0xFFB1D6B5),
         foregroundColor: const Color(0xFF343A40),

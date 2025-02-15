@@ -21,6 +21,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
+    - assets/header_logo.png
     - assets/images/ten-thousand.png
     - assets/images/five-thousand.png
     - assets/images/thousand.png
