@@ -24,8 +24,17 @@ class CurrencyConversionRow extends StatelessWidget {
         children: [
           Row(
             children: [
-              Image.asset(imagePath,
-                  width: 60, height: 40, fit: BoxFit.contain),
+              GestureDetector(
+                onTap: () {
+                  _showImageDialog(context, imagePath);
+                },
+                child: Image.asset(
+                  imagePath,
+                  width: 60,
+                  height: 40,
+                  fit: BoxFit.contain,
+                ),
+              ),
               const SizedBox(width: 8),
               Text(
                 '$yenValue yen',
@@ -39,6 +48,25 @@ class CurrencyConversionRow extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  void _showImageDialog(BuildContext context, String imagePath) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return Dialog(
+          backgroundColor: Colors.transparent,
+          child: GestureDetector(
+            onTap: () {
+              Navigator.of(context).pop();
+            },
+            child: InteractiveViewer(
+              child: Image.asset(imagePath),
+            ),
+          ),
+        );
+      },
     );
   }
 }
