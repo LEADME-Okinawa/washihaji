@@ -18,7 +18,7 @@ class CurrencyConversionRow extends StatelessWidget {
     double convertedValue = yenValue * (exchangeRates[selectedCurrency] ?? 1.0);
 
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      padding: const EdgeInsets.symmetric(vertical: 4.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -26,14 +26,17 @@ class CurrencyConversionRow extends StatelessWidget {
             children: [
               Image.asset(imagePath,
                   width: 60, height: 40, fit: BoxFit.contain),
-              const SizedBox(width: 10),
+              const SizedBox(width: 8),
               Text(
                 '$yenValue yen',
                 style: const TextStyle(fontSize: 16),
               ),
             ],
           ),
-          Text('= ${convertedValue.toStringAsFixed(2)} $selectedCurrency'),
+          Text(
+            '= ${convertedValue.toStringAsFixed(2)} $selectedCurrency',
+            style: const TextStyle(fontSize: 16),
+          ),
         ],
       ),
     );
