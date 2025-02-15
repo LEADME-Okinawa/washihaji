@@ -11,6 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.6
+  flutter_launcher_icons: ^0.14.3
 
 dev_dependencies:
   flutter_test:
@@ -29,3 +30,11 @@ flutter:
     - assets/images/ten.png
     - assets/images/five.png
     - assets/images/one.png
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon.png"
+  remove_alpha_ios: true
+  adaptive_icon_background: "#b1d6b5"
+  adaptive_icon_foreground: "assets/icon.png"
