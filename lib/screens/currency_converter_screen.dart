@@ -30,6 +30,8 @@ class CurrencyConverterScreenState extends State<CurrencyConverterScreen> {
 
   Future<void> _convertCurrency() async {
     final yen = double.tryParse(_yenController.text) ?? 0.0;
+    if (yen == 0) return;
+
     final url = Uri.parse(
       'http://163.43.144.171:8080/api/v1/transform?money=$yen&from=JPY&to=$_selectedCurrency',
     );
@@ -71,6 +73,7 @@ class CurrencyConverterScreenState extends State<CurrencyConverterScreen> {
                   setState(() {
                     _selectedCurrency = newValue;
                   });
+                  _convertCurrency();
                 }
               },
               onYenChanged: (String value) {
