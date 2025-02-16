@@ -58,33 +58,38 @@ class CurrencyConverterScreenState extends State<CurrencyConverterScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const CustomAppBar(),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            InformationInput(
-              yenController: _yenController,
-              selectedCurrency: _selectedCurrency,
-              onCurrencyChanged: (String? newValue) {
-                if (newValue != null) {
-                  setState(() {
-                    _selectedCurrency = newValue;
-                  });
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).unfocus();
+      },
+      child: Scaffold(
+        appBar: const CustomAppBar(),
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              InformationInput(
+                yenController: _yenController,
+                selectedCurrency: _selectedCurrency,
+                onCurrencyChanged: (String? newValue) {
+                  if (newValue != null) {
+                    setState(() {
+                      _selectedCurrency = newValue;
+                    });
+                    _convertCurrency();
+                  }
+                },
+                onYenChanged: (String value) {
                   _convertCurrency();
-                }
-              },
-              onYenChanged: (String value) {
-                _convertCurrency();
-              },
-            ),
-            const SizedBox(height: 16),
-            _buildConversionResult(),
-            const SizedBox(height: 16),
-            _buildCurrencyList(),
-          ],
+                },
+              ),
+              const SizedBox(height: 16),
+              _buildConversionResult(),
+              const SizedBox(height: 16),
+              _buildCurrencyList(),
+            ],
+          ),
         ),
       ),
     );
