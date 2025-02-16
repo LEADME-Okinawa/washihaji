@@ -1,16 +1,70 @@
 # washihaji
+## 概要
+### 課題
+インバウンド（訪日外国人）の日本円の管理が難しい
 
-A new Flutter project.
+### 解決案
+金種の理解をビジュアルで提供する
 
-## Getting Started
+### こんなアプリを作りました！
+店頭などで表示されている日本円を入力すると、リアルタイムでレート換算された自国通貨を表示する
 
-This project is a starting point for a Flutter application.
+### アプリの一押しポイント！
+リアルタイムの為替レートをAPIで入手する
 
-A few resources to get you started if this is your first Flutter project:
+## Repositories
+### フロントエンド
+このリポジトリ（https://github.com/LEADME-Okinawa/washihaji）
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### バックエンド
+https://github.com/LEADME-Okinawa/washihaji-api
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 背景
+インバウンド（訪日外国人）による日本訪問が増加する中で、日本円の金種を正確に理解し、管理することは外国人観光客にとって大きな課題となっています。日本円にはさまざまな金額の紙幣や硬貨があり、支払い時に混乱が生じることがよくあります。このような状況において、円滑なショッピング体験を提供するためには、外国人観光客が自国通貨でどのくらいの金額を支払っているのかを素早く理解できる仕組みが必要です。
+
+そこで、私たちは「日本円をリアルタイムで自国通貨に換算できるアプリ」を開発しました。このアプリは、店頭などで表示されている日本円の金額を入力することで、即座にその金額が自国通貨に換算される機能を提供します。これにより、外国人観光客は日本円の金額に戸惑うことなく、支払うべき金額をスムーズに把握できるようになります。
+
+さらに、アプリでは最新の為替レートをAPIで取得し、リアルタイムでの換算を実現しています。これにより、利用者は常に最新の為替レートを元に正確な金額を知ることができ、安心して観光・買い物を楽しむことができます。
+
+## アプリについて
+### 機能
+- テキストフィールドに任意の金額（日本円）を入力し、ドロップダウンから換算したい先の通貨単位を選ぶ
+    - ドロップダウンの項目：USD、KRW、CNY、EUR
+- 画面中央に`{入力した金額} yen = {換算された金額} {選択された通貨単位}`が表示される
+    - 例: `12345 yen = 81.48 USD`
+- 画面の下半分には、日本貨幣の画像と金額、それに対応する選択された通貨単位での金額が表示される
+    - 日本貨幣の画像はタップで拡大表示可能
+
+### 画面
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/1472510/d3356f91-9a72-4ae4-a210-df64f03f674b.png" width=30%>
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/1472510/554b8378-e4d0-45c7-a500-67815070522c.png" width=30%>
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/1472510/94b2e3f9-6761-4f4d-8288-0fbf8593f40a.png" width=30%>
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/1472510/b6fa4773-3be5-432b-8233-47a3cca8b266.png" width=30%>
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/1472510/2f532eac-b1c8-4577-9680-b8b7ed769c65.png" width=30%>
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/1472510/1e9a82a5-4433-41a9-a117-ab3a9325269b.png" width=30%>
+
+## 技術スタック
+| | |
+| - | - |
+| 言語 | Dart |
+| FW | Flutter (fvm 3.22.3) |
+| 状態管理 | `setState()` |
+| UIコンポーネント | Flutter Material |
+
+### その他
+| | |
+| - | - |
+| アイコン、ロゴ、UIデザイン | Figma |
+
+## こだわり
+### デザイン
+チーム名「わしはじ」、アプリ名「WASHIHAJI」ということで、絶対にどこかで"鷲要素"を入れる！という強いこだわりを胸に考えました。その結果、アイコンの中で天秤に"￥"と"$"を平等に持つ鷲が誕生しました。
+また、アプリ全体のプライマリーカラーには`#B1D6B5`を採用しています。淡い緑色によって、ユーザーに安心・信頼感を与えることを目的としています。
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/1472510/606dd1e9-f28b-43a9-9f95-ea6b3478e0d4.png" width=50%>
+
+### 機能
+画面下部の日本貨幣をタップすることで拡大表示できるようにしました。
+これにより、金額（数字）だけでなく見た目でも「金種の理解をビジュアルで提供する」を達成できると考えています。
+
+### 技術
+全部無料枠でやりました！金のかからない男たち！
