@@ -60,6 +60,7 @@ https://github.com/LEADME-Okinawa/washihaji-api
 ### デザイン
 チーム名「わしはじ」、アプリ名「WASHIHAJI」ということで、絶対にどこかで"鷲要素"を入れる！という強いこだわりを胸に考えました。その結果、アイコンの中で天秤に"￥"と"$"を平等に持つ鷲が誕生しました。
 また、アプリ全体のプライマリーカラーには`#B1D6B5`を採用しています。淡い緑色によって、ユーザーに安心・信頼感を与えることを目的としています。
+
 <img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/1472510/606dd1e9-f28b-43a9-9f95-ea6b3478e0d4.png" width=50%>
 
 ### 機能
