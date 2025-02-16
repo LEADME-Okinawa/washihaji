@@ -15,7 +15,8 @@ class CurrencyConversionRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final convertedValue = yenValue * (exchangeRates[selectedCurrency] ?? 1.0);
+    final double convertedValue =
+        yenValue * (exchangeRates[selectedCurrency] ?? 1.0);
 
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4.0),
